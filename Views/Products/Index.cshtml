@@ -1,0 +1,18 @@
+﻿@model List<Product>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Product Menu</h1>
+
+@{
+    foreach(Product p in Model)
+    {
+        <div>
+            <h2>@p.Name</h2>
+            <p>$@p.Price</p>
+            <a asp-action="Details" asp-route-id="@p.Id">View details</a>
+        </div>   
+    }
+}
